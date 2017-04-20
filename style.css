@@ -1,0 +1,175 @@
+body {
+	background-image: url("backGround.jpg");	
+	background-size: cover;
+}
+
+a { text-decoration: none; }
+
+body * {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 20px;
+	font-weight: 100;
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.title , .credContainer , .btn {
+	color: #FFF;
+	background-color: #57A7E4;
+	box-shadow: -2px 2px #3394DB;
+}
+
+.title, .credContainer {
+	margin-bottom: 30px;
+	border-radius: 10px;
+}
+
+.title {
+	padding: 15px 60px;	
+	margin-bottom: 30px;
+	font-size: 30px;
+	border: none;
+	text-shadow: 2px -2px #3394DB ;
+}
+
+.credContainer {
+	margin-bottom: 2	0px;
+	padding: 15px 20px;	
+}
+
+.btn {
+	padding: 10px 30px;	
+	border-radius: 999px;
+	margin-bottom: 10px;
+	border: none;
+}
+
+.credChild {
+	margin: 15px;
+	display: flex;
+}
+
+.label {
+	line-height: 0;
+}
+
+.username { margin-right: 20px; }
+.password { margin-right: 34px; }
+
+.inputRow {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 25%;
+	margin-bottom: 20px;
+}
+
+.inputRow .label {
+	/*width: 50% ;*/
+	color: #017fda;	
+	min-width: 150px;
+	max-width: 300px
+}
+
+.inputRow .input {
+	min-width: 80px;
+	width: 50%;
+}
+
+.table {
+	width: calc(100% - 100px); 
+	min-width: 900px;
+	margin-bottom: 20px;
+}
+
+.header div , .row div {
+	box-sizing: border-box;
+	align-items: center;
+	border: 1px solid #000;	
+	display: flex;
+	justify-content: center;
+	color: #123;
+}
+	
+.row , .header {
+	border: 1px solid #000;
+}
+
+.header {
+	display: flex;
+	background-color: #57A7E4;
+	border: 2px solid #000;
+	border-right: 1px solid #000;
+	border-left: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.header div {
+	padding: 5px 0;
+}
+
+.row {
+	/*border-top: none;*/
+	display: flex;
+	background-color: #8ADAF7;
+}
+
+.row div {
+	border-top: none;
+	padding: 5px;
+	word-break: break-word;
+	word-wrap: break-word;
+	text-align: center;5
+}
+
+.col2 .header div, .col2 .row div {
+	width: calc(100% / 2);
+}
+
+.col5 .header div, .col5 .row div {
+	width: calc(100% / 5);
+}
+
+.col6 .header div, .col6 .row div {
+	width: calc(100% / 6);
+}
+
+.col8 .header div, .col8 .row div {
+	width: calc(100% / 8);
+}
+
+.col2Edit .header div, .col2Edit .row div {
+	width: calc((100%  - 150px ) / 2);
+}
+
+.col5Edit .header div, .col5Edit .row div {
+	width: calc((100%  - 150px ) / 5);
+}
+
+.col6Edit .header div, .col6Edit .row div {
+	width: calc((100%  - 150px ) / 6);
+}
+
+.col8Edit .header div, .col8Edit .row div {
+	width: calc((100%  - 150px ) / 8);
+}
+
+.smBtn {
+	/*background-color: #fff;*/
+	/*border-radius: 999px;*/
+	background-color: #57A7E4;
+	font-size: 17px;
+	color: #000;
+	border: 1px solid #000;
+	padding: 2px;
+	margin: 5px;
+	box-sizing: border-box;
+	flex-grow: 1;
+	text-align: center;
+}
