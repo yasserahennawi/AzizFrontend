@@ -1,0 +1,29 @@
+{
+  "name": "ProjectFrontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"live-server\" \"webpack --watch\"   ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasserahennawi/AzizFrontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yasserahennawi/AzizFrontend/issues"
+  },
+  "homepage": "https://github.com/yasserahennawi/AzizFrontend#readme",
+  "dependencies": {
+    "concurrently": "^3.4.0",
+    "jquery": "^3.2.1",
+    "live-server": "^1.2.0",
+    "promise": "^7.1.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.0.0"
+  }
+}
