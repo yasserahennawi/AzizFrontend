@@ -21,7 +21,11 @@
     "concurrently": "^3.4.0",
     "jquery": "^3.2.1",
     "live-server": "^1.2.0",
-    "promise": "^7.1.1"
+    "promise": "^7.1.1",
+    "babel-core": "*",
+    "babel-loader": "*",
+    "babel-preset-es2015": "*",
+    "webpack": "*"
   },
   "devDependencies": {
     "babel-loader": "^7.0.0"
