@@ -22,6 +22,7 @@ body * {
 	color: #FFF;
 	background-color: #57A7E4;
 	box-shadow: -2px 2px #3394DB;
+  -webkit-appearance: none !important;
 }
 
 .title, .credContainer {
@@ -144,19 +145,19 @@ body * {
 	width: calc(100% / 8);
 }
 
-.col2Edit .header div, .col2Edit .row div {
+.col2.edit .header div, .col2.edit .row div {
 	width: calc((100%  - 150px ) / 2);
 }
 
-.col5Edit .header div, .col5Edit .row div {
+.col5.edit .header div, .col5.edit .row div {
 	width: calc((100%  - 150px ) / 5);
 }
 
-.col6Edit .header div, .col6Edit .row div {
+.col6.edit .header div, .col6.edit .row div {
 	width: calc((100%  - 150px ) / 6);
 }
 
-.col8Edit .header div, .col8Edit .row div {
+.col8.edit .header div, .col8.edit .row div {
 	width: calc((100%  - 150px ) / 8);
 }
 
