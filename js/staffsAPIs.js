@@ -16,6 +16,21 @@ export function getStaffsPromise() {
   }
 )};
 
+export function getStaffByIdPromise(id) {
+  return new Promise( function(resolve, reject) {
+    $.ajax({
+      type: 'GET',
+      url: `http://localhost:4567/api/staffs/${id}`,
+      success: (data) => {
+        resolve(data);
+      },
+      error: (error) => {
+        reject(error)
+      } 
+    })
+  }
+)};
+
 export function getStaffsEdit(data) {
   $.each(data, function(key,value){
     $('.tStaffs.edit').append(`
@@ -26,8 +41,17 @@ export function getStaffsEdit(data) {
         <div>${value.ganeder}</div>
         <div>${value.degree}</div>
         <div>${value.address}</div>
-        <a type="button" href="" class="smBtn">Edit</a> 
-        <a type="button" href="" class="smBtn">Delete</a> 
+        <a
+          type="button"
+          class="smBtn">
+          Edit
+        </a> 
+        <a
+          type="button"
+          data-staffid="${value.staff_id}"
+          class="smBtn delete">
+          Delete
+        </a> 
       </div>
     `);
   });
@@ -48,8 +72,30 @@ export function getStaffsGuest(data) {
   });
 }
 
+export function deleteStaffPromise(staff_id) {
+  return new Promise( function(resolve, reject) {
+    $.ajax({
+      type: 'DELETE',
+      url: `http://localhost:4567/api/staff/${staff_id}`,
+      success: (data) => {
+        resolve(data);
+      },
+      error: (error) => {
+        reject(error)
+      } 
+    })
+  }
+)};
 
-
-
-
+export function deleteStaffHandler() {
+  var buttons = $('.tStaffs.edit .row').children('.delete');
+  for (let button of buttons) {
+    button.onclick = function() {
+      deleteStaffPromise(button.getAttribute('data-staffid'))
+      .then(()=>{
+        location.reload();
+      })
+    }
+  }
+}
 

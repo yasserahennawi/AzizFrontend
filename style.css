@@ -174,3 +174,37 @@ body * {
 	flex-grow: 1;
 	text-align: center;
 }
+
+.searchContainer {
+  border: 1px solid #aaa;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  justify-content: center;
+  background-color: rgba(255,255,255,0.4);
+}
+
+.inputID {
+  width: 50px;
+  text-align: center;
+}
+
+.search{
+  border: 1px solid #aaa;
+  padding:10px;
+  margin-top:10px;
+  background-color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+
+.results{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.resultsRow div:first-child {
+	color: #3394DB;
+	margin: 0 20px 20px 0 ;
+}

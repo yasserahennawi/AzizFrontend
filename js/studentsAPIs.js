@@ -16,6 +16,21 @@ export function getStudentsPromise() {
   }
 )};
 
+export function getStudentByIdPromise(id) {
+  return new Promise( function(resolve, reject) {
+    $.ajax({
+      type: 'GET',
+      url: `http://localhost:4567/api/students/${id}`,
+      success: (data) => {
+        resolve(data);
+      },
+      error: (error) => {
+        reject(error)
+      } 
+    })
+  }
+)};
+
 export function getStudentsEdit(data) {
   $.each(data, function(key,value){
     $('.tStudents.edit').append(`
@@ -28,8 +43,17 @@ export function getStudentsEdit(data) {
         <div>${value.division}</div>
         <div>${value.stage}</div>
         <div>${value.address}</div>
-        <a type="button" href="" class="smBtn">Edit</a> 
-        <a type="button" href="" class="smBtn">Delete</a> 
+        <a
+          type="button"
+          class="smBtn">
+          Edit
+        </a> 
+        <a
+          type="button"
+          data-studentid="${value.student_ID}"
+          class="smBtn delete">
+          Delete
+        </a> 
       </div>
     `);
   });
@@ -50,4 +74,32 @@ export function getStudentsGuest(data) {
       </div>
     `);
   });
+}
+
+
+export function deleteStudentPromise(student_ID) {
+  return new Promise( function(resolve, reject) {
+    $.ajax({
+      type: 'DELETE',
+      url: `http://localhost:4567/api/student/${student_ID}`,
+      success: (data) => {
+        resolve(data);
+      },
+      error: (error) => {
+        reject(error)
+      } 
+    })
+  }
+)};
+
+export function deleteStudentHandler() {
+  var buttons = $('.tStudents.edit .row').children('.delete');
+  for (let button of buttons) {
+    button.onclick = function() {
+      deleteStudentPromise(button.getAttribute('data-studentid'))
+      .then(()=>{
+        location.reload();
+      })
+    }
+  }
 }

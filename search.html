@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="normalize.css">
+  <script src="bundle.js"></script>
+</head>
+<body>
+  <div class="page">
+    <div class="title">
+      Search by ID
+    </div>
+    <div class="searchContainer">	
+      <div style="
+        display: flex;
+        align-items: center;
+        ">
+        <div style="margin-right: 10px;"> Search for: </div>
+        <select style="margin-right: 10px;" id="searchType" >
+          <option value="student">Student</option>
+          <option value="subject">Subject</option>
+          <option value="staff">Staff</option>
+          <option value="sub_dept">Sub_dept</option>
+          <option value="classes">Classes</option>
+        </select>
+        <div style="margin-right: 10px;">with ID : </div>
+        <input type="text" class="inputID">
+      </div>
+      <div 
+        class="search">
+          submit
+      </div>
+    </div>
+    <div 
+      class="results">
+      <div  style="display: flex;">
+        Select the type and write it's ID 
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
