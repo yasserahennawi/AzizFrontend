@@ -1,11 +1,13 @@
 import $ from 'jquery';
 var Promise = require('promise');
 
+var backendServer = "http://192.168.1.102:4567";
+
 export function getStaffsPromise() {
   return new Promise( function(resolve, reject) {
     $.ajax({
       type: 'GET',
-      url: `http://localhost:4567/api/staffs`,
+      url: `${backendServer}/api/staffs`,
       success: (data) => {
         resolve(data);
       },
@@ -20,7 +22,7 @@ export function getStaffByIdPromise(id) {
   return new Promise( function(resolve, reject) {
     $.ajax({
       type: 'GET',
-      url: `http://localhost:4567/api/staffs/${id}`,
+      url: `${backendServer}/api/staffs/${id}`,
       success: (data) => {
         resolve(data);
       },
@@ -76,7 +78,7 @@ export function deleteStaffPromise(staff_id) {
   return new Promise( function(resolve, reject) {
     $.ajax({
       type: 'DELETE',
-      url: `http://localhost:4567/api/staff/${staff_id}`,
+      url: `${backendServer}/api/staff/${staff_id}`,
       success: (data) => {
         resolve(data);
       },

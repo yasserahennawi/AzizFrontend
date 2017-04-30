@@ -38,6 +38,11 @@ body * {
 	text-shadow: 2px -2px #3394DB ;
 }
 
+.title .row .delete {
+	color: red;
+	width: 50px !important;
+}
+
 .credContainer {
 	margin-bottom: 2	0px;
 	padding: 15px 20px;	
@@ -85,7 +90,7 @@ body * {
 
 .table {
 	width: calc(100% - 100px); 
-	min-width: 900px;
+	/*min-width: 900px;*/
 	margin-bottom: 20px;
 }
 
@@ -93,9 +98,11 @@ body * {
 	box-sizing: border-box;
 	align-items: center;
 	border: 1px solid #000;	
-	display: flex;
-	justify-content: center;
+	text-align: center;
 	color: #123;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 	
 .row , .header {
@@ -129,36 +136,56 @@ body * {
 	text-align: center;5
 }
 
+.header div:first-child, .row div:first-child {
+	width: 50px !important;
+}
+
 .col2 .header div, .col2 .row div {
-	width: calc(100% / 2);
+	width: 100%;
 }
 
 .col5 .header div, .col5 .row div {
-	width: calc(100% / 5);
+	width: calc((100% - 290px)/2)  ;
+}
+
+.col5 .header div:nth-child(4), .col5 .row div:nth-child(4) {
+	width: 140px !important;
+}
+.col5 .header div:nth-child(5), .col5 .row div:nth-child(5) {
+	width: 100px !important;
 }
 
 .col6 .header div, .col6 .row div {
-	width: calc(100% / 6);
+	width: calc((100% -50px) / 5);
 }
-
 .col8 .header div, .col8 .row div {
-	width: calc(100% / 8);
+	width: calc((100% - 300px)/ 4);
 }
 
 .col2.edit .header div, .col2.edit .row div {
-	width: calc((100%  - 150px ) / 2);
+	width: calc(100%  - 190px ) ;
 }
 
 .col5.edit .header div, .col5.edit .row div {
-	width: calc((100%  - 150px ) / 5);
+	width: calc((100% - 400px)/2)  ;
 }
 
 .col6.edit .header div, .col6.edit .row div {
-	width: calc((100%  - 150px ) / 6);
+	width: calc((100% - 190px) / 5);
 }
 
 .col8.edit .header div, .col8.edit .row div {
-	width: calc((100%  - 150px ) / 8);
+	width: calc((100% - 440px)/ 4);
+}
+
+.col8 .header div:nth-child(4), .col8 .row div:nth-child(4) {
+	width: 80px;
+}
+.col8 .header div:nth-child(7), .col8 .row div:nth-child(7) {
+	width: 80px;
+}
+.col8 .header div:nth-child(8), .col8 .row div:nth-child(8) {
+	width: 90px;
 }
 
 .smBtn {
@@ -173,6 +200,11 @@ body * {
 	box-sizing: border-box;
 	flex-grow: 1;
 	text-align: center;
+}
+
+.delete {
+	color: red;
+	width: 50px !important;
 }
 
 .searchContainer {
