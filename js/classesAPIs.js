@@ -1,7 +1,7 @@
 import $ from 'jquery';
 var Promise = require('promise');
 
-var backendServer = "http://192.168.1.102:4567";
+var backendServer = "http://localhost:4567";
 
 export function getClassesPromise() {
   return new Promise( function(resolve, reject) {

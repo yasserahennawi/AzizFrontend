@@ -16,6 +16,7 @@ body * {
 	flex-direction: column;
 	align-items: center;
 	margin-top: 50px;
+	padding: 0 50px;
 }
 
 .title , .credContainer , .btn {
@@ -89,8 +90,7 @@ body * {
 }
 
 .table {
-	width: calc(100% - 100px); 
-	/*min-width: 900px;*/
+	width: 100%; 
 	margin-bottom: 20px;
 }
 
@@ -136,7 +136,7 @@ body * {
 	text-align: center;5
 }
 
-.header div:first-child, .row div:first-child {
+.students > *:first-child, .header div:first-child, .row div:first-child {
 	width: 50px !important;
 }
 
@@ -158,33 +158,41 @@ body * {
 .col6 .header div, .col6 .row div {
 	width: calc((100% -50px) / 5);
 }
-.col8 .header div, .col8 .row div {
+.students > *
+,.col8 .header div
+,.col8 .row div {
 	width: calc((100% - 300px)/ 4);
 }
 
-.col2.edit .header div, .col2.edit .row div {
+.col2.edit .header div
+,.col2.edit .row div {
 	width: calc(100%  - 190px ) ;
 }
 
-.col5.edit .header div, .col5.edit .row div {
+.col5.edit .header div
+,.col5.edit .row div {
 	width: calc((100% - 400px)/2)  ;
 }
 
-.col6.edit .header div, .col6.edit .row div {
+.col6.edit .header div
+,.col6.edit .row div {
 	width: calc((100% - 190px) / 5);
 }
 
-.col8.edit .header div, .col8.edit .row div {
+
+.students > *
+,.col8.edit .header div
+,.col8.edit .row div {
 	width: calc((100% - 440px)/ 4);
 }
 
-.col8 .header div:nth-child(4), .col8 .row div:nth-child(4) {
+,.students > *:nth-child(4), .col8 .header div:nth-child(4), .col8 .row div:nth-child(4) {
 	width: 80px;
 }
-.col8 .header div:nth-child(7), .col8 .row div:nth-child(7) {
+,.students > *:nth-child(7), .col8 .header div:nth-child(7), .col8 .row div:nth-child(7) {
 	width: 80px;
 }
-.col8 .header div:nth-child(8), .col8 .row div:nth-child(8) {
+,.students > *:nth-child(8), .col8 .header div:nth-child(8), .col8 .row div:nth-child(8) {
 	width: 90px;
 }
 
@@ -239,4 +247,40 @@ body * {
 .resultsRow div:first-child {
 	color: #3394DB;
 	margin: 0 20px 20px 0 ;
+}
+
+.InputContainer {
+	display: flex;
+	align-self: flex-start;
+	flex-wrap: nowrap;
+	margin-bottom: 20px;
+}
+
+.InputContainer > * {
+	border: 1px solid #000;
+	border-radius: 10px;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.addBtn {
+	/*color: #FFF;*/
+	cursor: pointer;
+	display: flex;
+	width: auto !important;
+	font-size: 16px;
+	text-align: center;
+	background-color: #ccc;
+	padding: 10px 20px;	
+	margin: 0 auto;
+	border: none;
+}
+
+.dataInput {
+	width: 100%;
+	text-align: center;
+	margin-right: 3px;
+	box-sizing: border-box;
+  background: transparent;
+  border: none;
 }

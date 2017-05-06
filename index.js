@@ -1,7 +1,7 @@
 import $ from 'jquery';
 var Promise = require('promise');
 
-import {getStudentsEdit, getStudentByIdPromise, getStudentsGuest, getStudentsPromise, deleteStudentHandler} from './js/studentsAPIs.js';
+import {editStudentHandler, addStudentHandler, getStudentsEdit, getStudentByIdPromise, getStudentsGuest, getStudentsPromise, deleteStudentHandler} from './js/studentsAPIs.js';
 import {getStaffsEdit, getStaffsGuest, getStaffsPromise, deleteStaffHandler} from './js/staffsAPIs.js';
 import {getSubjectsEdit, getSubjectsGuest, getSubjectsPromise, deleteSubjectHandler} from './js/subjectsAPIs.js';
 import {getSub_deptsEdit, getSub_deptsGuest, getSub_deptsPromise, deleteSub_deptHandler} from './js/sub_deptsAPIs.js';
@@ -16,7 +16,10 @@ $(()=> {
   })
   .then((data)=> {
     deleteStudentHandler();
+    addStudentHandler();
+    editStudentHandler();
   });
+
   getSubjectsPromise()
   .then((data)=>{
     getSubjectsGuest(data);
@@ -25,6 +28,7 @@ $(()=> {
   .then(()=> {
     deleteSubjectHandler();
   });
+
   getStaffsPromise()
   .then((data)=>{
     getStaffsGuest(data);
@@ -33,6 +37,7 @@ $(()=> {
   .then((data)=> {
     deleteStaffHandler();
   });
+
   getSub_deptsPromise()
   .then((data)=> {
     getSub_deptsEdit(data);
@@ -41,6 +46,7 @@ $(()=> {
   .then (()=>{
     deleteSub_deptHandler();
   })
+
   getClassesPromise()
   .then((data)=> {
     getClassesEdit(data);

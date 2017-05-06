@@ -1,7 +1,7 @@
 import $ from 'jquery';
 var Promise = require('promise');
 
-var backendServer = "http://192.168.1.102:4567";
+var backendServer = "http://localhost:4567";
 
 export function getStaffsPromise() {
   return new Promise( function(resolve, reject) {
@@ -79,6 +79,21 @@ export function deleteStaffPromise(staff_id) {
     $.ajax({
       type: 'DELETE',
       url: `${backendServer}/api/staff/${staff_id}`,
+      success: (data) => {
+        resolve(data);
+      },
+      error: (error) => {
+        reject(error)
+      } 
+    })
+  }
+)};
+
+export function addStaffPromise(staff_id, staff_firstname, staff_secondname, ganeder, degree, address) {
+  return new Promise( function(resolve, reject) {
+    $.ajax({
+      type: 'DELETE',
+      url: `${backendServer}/api/staff`,
       success: (data) => {
         resolve(data);
       },
