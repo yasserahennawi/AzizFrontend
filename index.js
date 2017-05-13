@@ -2,10 +2,10 @@ import $ from 'jquery';
 var Promise = require('promise');
 
 import {editStudentHandler, addStudentHandler, getStudentsEdit, getStudentByIdPromise, getStudentsGuest, getStudentsPromise, deleteStudentHandler} from './js/studentsAPIs.js';
-import {getStaffsEdit, getStaffsGuest, getStaffsPromise, deleteStaffHandler} from './js/staffsAPIs.js';
-import {getSubjectsEdit, getSubjectsGuest, getSubjectsPromise, deleteSubjectHandler} from './js/subjectsAPIs.js';
-import {getSub_deptsEdit, getSub_deptsGuest, getSub_deptsPromise, deleteSub_deptHandler} from './js/sub_deptsAPIs.js';
-import {getClassesEdit, getClassesGuest, getClassesPromise, deleteClassHandler} from './js/ClassesAPIs.js';
+import {addStaffHandler, editStaffHandler, getStaffsEdit, getStaffsGuest, getStaffsPromise, deleteStaffHandler} from './js/staffsAPIs.js';
+import {editSubjectHandler, addSubjectHandler, getSubjectsEdit, getSubjectsGuest, getSubjectsPromise, deleteSubjectHandler} from './js/subjectsAPIs.js';
+import {editSub_deptHandler, addSub_deptHandler, getSub_deptsEdit, getSub_deptsGuest, getSub_deptsPromise, deleteSub_deptHandler} from './js/sub_deptsAPIs.js';
+import {addClassHandler, editClassHandler, getClassesEdit, getClassesGuest, getClassesPromise, deleteClassHandler} from './js/classesAPIs.js';
 import {searchButtonHandler} from './js/search.js';
 
 $(()=> {
@@ -27,6 +27,8 @@ $(()=> {
   })
   .then(()=> {
     deleteSubjectHandler();
+    addSubjectHandler();
+    editSubjectHandler();
   });
 
   getStaffsPromise()
@@ -36,6 +38,8 @@ $(()=> {
   })
   .then((data)=> {
     deleteStaffHandler();
+    addStaffHandler();
+    editStaffHandler();
   });
 
   getSub_deptsPromise()
@@ -45,6 +49,8 @@ $(()=> {
   })
   .then (()=>{
     deleteSub_deptHandler();
+    addSub_deptHandler();
+    editSub_deptHandler();
   })
 
   getClassesPromise()
@@ -55,6 +61,8 @@ $(()=> {
   })
   .then((data)=> {
     deleteClassHandler();
+    addClassHandler();
+    editClassHandler();
   })
   searchButtonHandler();
 

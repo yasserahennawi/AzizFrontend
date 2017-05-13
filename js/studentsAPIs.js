@@ -37,14 +37,46 @@ export function getStudentsEdit(data) {
   $.each(data, function(key,value){
     $('.tStudents.edit').append(`
       <div class="row">
-        <div><input class="dataInput ${value.student_ID}id" value=${value.student_ID}></div>
-        <div><input class="dataInput ${value.student_ID}firstname" value=${value.student_Firstname}></div>
-        <div><input class="dataInput ${value.student_ID}lastname" value=${value.student_lastname}></div>
-        <div><input class="dataInput ${value.student_ID}gander" value=${value.student_gander}></div>
-        <div><input class="dataInput ${value.student_ID}section" value=${value.section}></div>
-        <div><input class="dataInput ${value.student_ID}division" value=${value.division}></div>
-        <div><input class="dataInput ${value.student_ID}stage" value=${value.stage}></div>
-        <div><input class="dataInput ${value.student_ID}address" value=${value.address}></div>
+        <div>
+          <input 
+            class="dataInput ${value.student_ID}id" 
+            value=${value.student_ID}>
+        </div>
+        <div>
+          <input 
+            class="dataInput ${value.student_ID}firstname" 
+            value=${value.student_Firstname}>
+        </div>
+        <div>
+          <input 
+            class="dataInput ${value.student_ID}lastname" 
+            value=${value.student_lastname}>
+        </div>
+        <div>
+          <input 
+            class="dataInput ${value.student_ID}gander" 
+            value=${value.student_gander}>
+        </div>
+        <div>
+          <input 
+            class="dataInput ${value.student_ID}section" 
+            value=${value.section}>
+        </div>
+        <div>
+          <input 
+            class="dataInput ${value.student_ID}division" 
+            value=${value.division}>
+        </div>
+        <div>
+          <input 
+            class="dataInput ${value.student_ID}stage" 
+            value=${value.stage}>
+        </div>
+        <div>
+          <input 
+            class="dataInput ${value.student_ID}address" 
+            value=${value.address}>
+        </div>
         <a
           type="button"
           data-studentid="${value.student_ID}"
@@ -133,18 +165,6 @@ export function editStudentPromise(id, student) {
   }
 )};
 
-export function deleteStudentHandler() {
-  var buttons = $('.tStudents.edit .row').children('.delete');
-  for (let button of buttons) {
-    button.onclick = function() {
-      deleteStudentPromise(button.getAttribute('data-studentid'))
-      .then(()=>{
-        location.reload();
-      })
-    }
-  }
-}
-
 export function editStudentHandler() {
   var buttons = $('.tStudents.edit .row').children('.edit');
   for (let button of buttons) {
@@ -161,9 +181,20 @@ export function editStudentHandler() {
         stage: $(`.${thisID}stage`).val(),
         address: $(`.${thisID}address`).val()
       }
-      console.log(data);
       editStudentPromise(button.getAttribute('data-studentid') , data)
       location.reload();
+    }
+  }
+}
+
+export function deleteStudentHandler() {
+  var buttons = $('.tStudents.edit .row').children('.delete');
+  for (let button of buttons) {
+    button.onclick = function() {
+      deleteStudentPromise(button.getAttribute('data-studentid'))
+      .then(()=>{
+        location.reload();
+      })
     }
   }
 }

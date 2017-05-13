@@ -119,7 +119,7 @@ body * {
 }
 
 .header div {
-	padding: 5px 0;
+	padding: 5px;
 }
 
 .row {
@@ -133,10 +133,16 @@ body * {
 	padding: 5px;
 	word-break: break-word;
 	word-wrap: break-word;
-	text-align: center;5
+	text-align: center;
 }
 
-.students > *:first-child, .header div:first-child, .row div:first-child {
+.students > *:first-child
+,.staffs > *:first-child
+,.classes > *:first-child
+,.subjects > *:first-child
+,.sub_depts > *:first-child
+, .header div:first-child
+, .row div:first-child {
 	width: 50px !important;
 }
 
@@ -148,33 +154,44 @@ body * {
 	width: calc((100% - 290px)/2)  ;
 }
 
-.col5 .header div:nth-child(4), .col5 .row div:nth-child(4) {
+.subjects > *:nth-child(4)
+,.col5 .header div:nth-child(4)
+,.col5 .row div:nth-child(4) {
 	width: 140px !important;
 }
-.col5 .header div:nth-child(5), .col5 .row div:nth-child(5) {
+
+.subjects > *:nth-child(5)
+,.col5 .header div:nth-child(5)
+,.col5 .row div:nth-child(5) {
 	width: 100px !important;
 }
 
-.col6 .header div, .col6 .row div {
+.col6 .header div
+, .col6 .row div {
 	width: calc((100% -50px) / 5);
 }
-.students > *
-,.col8 .header div
-,.col8 .row div {
+
+.col8 .header > div
+,.col8 .row > div {
 	width: calc((100% - 300px)/ 4);
 }
 
-.col2.edit .header div
+.sub_depts > *
+,.classes > *
+,.col2.edit .header div
 ,.col2.edit .row div {
 	width: calc(100%  - 190px ) ;
 }
 
-.col5.edit .header div
+
+.subjects > *
+,.col5.edit .header div
 ,.col5.edit .row div {
 	width: calc((100% - 400px)/2)  ;
 }
 
-.col6.edit .header div
+.staffs > *
+,.col6.edit .header div
 ,.col6.edit .row div {
 	width: calc((100% - 190px) / 5);
 }
@@ -186,13 +203,13 @@ body * {
 	width: calc((100% - 440px)/ 4);
 }
 
-,.students > *:nth-child(4), .col8 .header div:nth-child(4), .col8 .row div:nth-child(4) {
+.students > input:nth-child(4), .col8 .header div:nth-child(4), .col8 .row div:nth-child(4) {
+	width: 80px !important;
+}
+.students > input:nth-child(7), .col8 .header div:nth-child(7), .col8 .row div:nth-child(7) {
 	width: 80px;
 }
-,.students > *:nth-child(7), .col8 .header div:nth-child(7), .col8 .row div:nth-child(7) {
-	width: 80px;
-}
-,.students > *:nth-child(8), .col8 .header div:nth-child(8), .col8 .row div:nth-child(8) {
+.students > input:nth-child(8), .col8 .header div:nth-child(8), .col8 .row div:nth-child(8) {
 	width: 90px;
 }
 
@@ -250,6 +267,7 @@ body * {
 }
 
 .InputContainer {
+	width: 100%;
 	display: flex;
 	align-self: flex-start;
 	flex-wrap: nowrap;
