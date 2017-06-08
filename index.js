@@ -9,6 +9,9 @@ import {addClassHandler, editClassHandler, getClassesEdit, getClassesGuest, getC
 import {searchButtonHandler} from './js/search.js';
 
 $(()=> {
+  var page = $('.page');
+  page.addClass('hidden');
+
   getStudentsPromise()
   .then((data)=>{
     getStudentsGuest(data);

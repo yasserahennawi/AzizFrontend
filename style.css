@@ -16,27 +16,36 @@ body * {
 	flex-direction: column;
 	align-items: center;
 	margin-top: 50px;
+	transition: all 1s ease;
 	padding: 0 50px;
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.page.hidden {
+  opacity: 1;
+  transform: scale(1);	
 }
 
 .title , .credContainer , .btn {
-	color: #FFF;
-	background-color: #57A7E4;
-	box-shadow: -2px 2px #3394DB;
+	color: #000;
+	background-color: rgba(255,255,255,0.3);
+	/*box-shadow: -2px 2px #3394DB;*/
   -webkit-appearance: none !important;
 }
 
 .title, .credContainer {
+	background-color: #fff;
 	margin-bottom: 30px;
 	border-radius: 10px;
+	border: 1px solid #000;
 }
 
 .title {
 	padding: 15px 60px;	
 	margin-bottom: 30px;
 	font-size: 30px;
-	border: none;
-	text-shadow: 2px -2px #3394DB ;
+	/*text-shadow: 2px -2px #3394DB ;*/
 }
 
 .title .row .delete {
@@ -48,12 +57,28 @@ body * {
 	margin-bottom: 2	0px;
 	padding: 15px 20px;	
 }
-
+/* OLD BTN
 .btn {
-	padding: 10px 30px;	
 	border-radius: 999px;
+	padding: 10px 30px;	
 	margin-bottom: 10px;
 	border: none;
+}*/
+
+.btn {
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	border: 1px solid #000;
+	transition: all 0.3s ease;
+}
+
+.btn:hover {
+	transition: all 0.4s ease;
+	background-color: #FFF;
+	/*text-shadow: -2px 2px #aaa ;*/
+	box-shadow: -4px 4px #aaa ;
+	transform: scale(1.2, 1.2);
 }
 
 .credChild {
@@ -111,7 +136,7 @@ body * {
 
 .header {
 	display: flex;
-	background-color: #57A7E4;
+	background-color: rgba(0,0,0,0.5);
 	border: 2px solid #000;
 	border-right: 1px solid #000;
 	border-left: 1px solid #000;
@@ -120,12 +145,15 @@ body * {
 
 .header div {
 	padding: 5px;
+	color: #fff;
 }
 
 .row {
 	/*border-top: none;*/
 	display: flex;
-	background-color: #8ADAF7;
+}
+.row:nth-child(odd){
+	background-color: rgba(0,0,0,0.1);
 }
 
 .row div {
@@ -216,7 +244,7 @@ body * {
 .smBtn {
 	/*background-color: #fff;*/
 	/*border-radius: 999px;*/
-	background-color: #57A7E4;
+	background-color: #FFF;
 	font-size: 17px;
 	color: #000;
 	border: 1px solid #000;
@@ -262,7 +290,7 @@ body * {
 }
 
 .resultsRow div:first-child {
-	color: #3394DB;
+	/*color: #3394DB;*/
 	margin: 0 20px 20px 0 ;
 }
 
@@ -282,13 +310,13 @@ body * {
 }
 
 .addBtn {
-	/*color: #FFF;*/
+	background-color: #FFF;
+	border: 1px solid #000;
 	cursor: pointer;
 	display: flex;
 	width: auto !important;
 	font-size: 16px;
 	text-align: center;
-	background-color: #ccc;
 	padding: 10px 20px;	
 	margin: 0 auto;
 	border: none;
